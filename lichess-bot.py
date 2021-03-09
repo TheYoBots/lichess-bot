@@ -158,7 +158,13 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
     engine.get_opponent_info(game)
     engine.set_time_control(game)
     conversation = Conversation(game, engine, li, __version__, challenge_queue)
+    
+    variant=game.perf_name
 
+    if type(board).uci_variant=="chess":
+        engine_path = os.path.join(cfg["dir"], cfg["name"])
+        engine = engine.SimpleEngine.popen_uci(engine_path)
+                
     logger.info("+++ {}".format(game))
 
     engine_cfg = config["engine"]
