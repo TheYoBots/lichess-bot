@@ -36,7 +36,7 @@ def run_bot(logging_level):
     game_ids = list(map(lambda game: game['gameId'], games))
     for game in game_ids:
         try:
-            li.abort(game)
+            li.make_move(game)
         except:
             pass
 
@@ -50,7 +50,7 @@ def run_bot(logging_level):
     game_ids = list(map(lambda game: game['gameId'], games))
     for game in game_ids:
         try:
-            li.abort(game)
+            li.make_move(game)
         except:
             pass
 
