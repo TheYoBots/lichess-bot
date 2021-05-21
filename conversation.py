@@ -4,7 +4,7 @@ logger = logging.getLogger(__name__)
 
 
 class Conversation:
-    def __init__(self, game, engine, xhr, version, challenge_queue):
+    def __init__(self, game, board, engine, xhr, version, challenge_queue):
         self.game = game
         self.engine = engine
         self.xhr = xhr
