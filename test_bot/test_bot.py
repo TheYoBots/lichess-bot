@@ -156,7 +156,7 @@ def test_sf():
     lichess_bot.enable_color_logging(debug_lvl=logging_level)
     download_sf()
     lichess_bot.logger.info("Downloaded SF")
-    with open("../config.yml.default") as file:
+    with open("./config.yml.default") as file:
         CONFIG = yaml.safe_load(file)
     CONFIG['token'] = ''
     CONFIG['engine']['dir'] = './TEMP/'
