@@ -48,8 +48,8 @@ class MockLichess(Lichess):
     def is_website_up(self, url: str) -> bool:
         """Check if a website is up."""
         try:
-            self.other_session.get(url, timeout=2)
-            return True
+            resp = self.other_session.get(url, timeout=2)
+            return resp.status_code == 200
         except RequestException:
             return False
 
